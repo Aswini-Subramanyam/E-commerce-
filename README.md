@@ -23,7 +23,7 @@ pip install streamlit pandas sqlalchemy psycopg2-binary
 ## Run
 
 ```bash
-streamlit run ecommerce_dashboard.py
+streamlit run ekart_dashboard_streamlit.py
 ```
 
 ## Notes

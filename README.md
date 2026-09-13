@@ -20,12 +20,6 @@ Filters for state, city, and category are available in the sidebar (except on th
 pip install streamlit pandas sqlalchemy psycopg2-binary
 ```
 
-Update the database connection in `ecommerce_dashboard.py`:
-
-```python
-DB_URL = "postgresql+psycopg2://<user>:<password>@<host>:<port>/<database>"
-```
-
 ## Run
 
 ```bash

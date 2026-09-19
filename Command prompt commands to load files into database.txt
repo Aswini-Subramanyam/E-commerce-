@@ -1,0 +1,40 @@
+C:\Windows\System32>psql -U postgres
+Password for user postgres:
+
+psql (18.4)
+WARNING: Console code page (437) differs from Windows code page (1252)
+         8-bit characters might not work correctly. See psql reference
+         page "Notes for Windows users" for details.
+Type "help" for help.
+
+postgres=# \c ecart_clean
+You are now connected to database "ecart_clean" as user "postgres".
+
+ecart_clean=# COPY geolocation_clean(geolocation_zip_code_prefix, geolocation_lat, geolocation_lng, geolocation_city, geolocation_state) FROM 'D:/Aswini/EDA/ecart/Data/cleaned/geolocations_clean_zip_sql.csv' DELIMITER ',' CSV HEADER;
+COPY 19177
+
+ecart_clean=# COPY customers_clean(customer_id, customer_unique_id, customer_zip_code_prefix, customer_city, customer_state) FROM 'D:/Aswini/EDA/ecart/Data/cleaned/customers_clean.csv' DELIMITER ',' CSV HEADER;
+COPY 99441
+
+ecart_clean=# COPY sellers_clean(seller_id, seller_zip_code_prefix, seller_city, seller_state) FROM 'D:/Aswini/EDA/ecart/Data/cleaned/sellers_clean.csv' DELIMITER ',' CSV HEADER;
+COPY 3095
+
+ecart_clean=# COPY product_category_name_translation(product_category_name, product_category_name_english) FROM 'D:/Aswini/EDA/ecart/Data/cleaned/product_category_translation_clean_sql.csv' DELIMITER ',' CSV HEADER;
+COPY 74
+
+ecart_clean=# COPY products_clean(product_id, product_category_name, product_weight_g, product_length_cm, product_photos_qty) FROM 'D:/Aswini/EDA/ecart/Data/cleaned/products_clean_final_sql.csv' DELIMITER ',' CSV HEADER;
+COPY 32951
+
+ecart_clean=# COPY orders_clean(order_id, customer_id, order_status, order_purchase_timestamp, order_delivered_customer_date, order_estimated_delivery_date) FROM 'D:/Aswini/EDA/ecart/Data/cleaned/orders_clean_final_sql.csv' DELIMITER ',' CSV HEADER;
+COPY 99441
+
+ecart_clean=# COPY order_items_clean(order_id, order_item_id, product_id, seller_id, shipping_limit_date, price, freight_value) FROM 'D:/Aswini/EDA/ecart/Data/cleaned/order_items_clean_final_sql.csv' DELIMITER ',' CSV HEADER;
+COPY 112650
+
+ecart_clean=# COPY order_reviews_clean(review_id, order_id, review_score, review_comment_message, review_creation_date) FROM 'D:/Aswini/EDA/ecart/Data/cleaned/order_reviews_clean_sql_1.csv' DELIMITER ',' CSV HEADER ENCODING 'UTF8';
+COPY 98410
+
+ecart_clean=# COPY order_payments_clean(order_id, payment_sequential, payment_type, payment_installments, payment_value) FROM 'D:/Aswini/EDA/ecart/Data/cleaned/order_payments_clean.csv' DELIMITER ',' CSV HEADER;
+COPY 103875
+
+ecart_clean=#
